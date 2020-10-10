@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="{{url_for('static', filename='styles/labs.css')}}">
+	<link rel="stylesheet" type="text/css" href="{{url_for('static', filename='styles/common.css')}}">
+	<link href="https://fonts.googleapis.com/css?family=Oxygen&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Fira+Sans&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
+	<meta name="viewport" content="width=device-width, initial-scale=0.6">
+	<link rel="icon" href="/static/tree.png">
+	<title>CSC B20 — Labs</title>
+</head>
+<body>
+
+	<nav id='navpages'>
+		<ul>
+			<a href="index.html" class="hbutton">Home</a>
+			<a href="calendar.html"class="hbutton">Calendar</a>
+			<a href="lectures.html" class="hbutton">Lectures</a>
+			<a href="assignments.html"class="hbutton">Assignments</a>
+			<a href="labs.html" class="hbutton">Labs</a>
+			<a href="https://piazza.com/class/k5l8ww7kz8l6f0" target="_blank" class="hbutton">Piazza</a>
+			<a href="https://markus.utsc.utoronto.ca/" target="_blank" class="hbutton">MarkUs</a>
+			<a href="resources.html" class="hbutton">Resources</a>
+		</ul>
+	</nav>
+
+	<div class='title'>
+		<h1>CSC B20 — Labs</h1>
+	</div>
+
+	<div class='pagebody'>
+		<div class='sub'>
+			<div id=pagebuttons>
+				<a href="#labs"><button class="pbutton">Tutorial Exercises</button></a>
+			</div>
+		</div>
+
+		<div class='subtitle' id='labs'>
+			<div class='block'></div>
+			<h2>Tutorial Exercises</h2>
+
+			<hr/>
+
+			<p class='content'>
+				This section contains the tutorial exercises.
+				
+				<div class="subcont">
+				Tutorials are held every week. The first tutorial week is week 2. Please make use of this valuable resource!
+				</div>
+			</p>
+
+			<hr/>
+
+			<div class="tablehead">
+				<div id="week">Week</div>
+				<div id='lec'>LEC01</div>
+				<div id="lab">Lab</div>
+			</div>
+
+			<div class="row1">
+				<div class="column1">2</div>
+				<div class='date'>Jan 13</div>
+				<div class="column2"><a href="{{url_for('static', filename='A2_handout.pdf')}}" target="_blank" class='a1'>Python Command line Handout</a></div>
+			</div>
+
+			<div class="row2">
+				<div class="column1">3</div>
+				<div class='date'>Jan 20</div>
+				<div class="column2"><a href="{{url_for('static', filename='A2_handout.pdf')}}" target="_blank" class='a1'>Relational Algebra Handout</a></div>
+			</div>
+
+			<div class="row1">
+				<div class="column1">4</div>
+				<div class='date'>Jan 27</div>
+				<div class="column2"><a href="{{url_for('static', filename='A2_handout.pdf')}}" target="_blank" class='a1'>SQL Handout</a></div>
+			</div>
+
+			<div class='solution'>
+				<div class="column1"></div>
+				<div class='date'></div>
+				<div class="column2"><a href="{{url_for('static', filename='A2_handout.pdf')}}" target="_blank" class='a1'><b>W4 Solution</b></a></div>
+			</div>
+
+			<div class="row2">
+				<div class="column1">5</div>
+				<div class='date'>Feb 3</div>
+				<div class="column2"><a href="{{url_for('static', filename='A2_handout.pdf')}}" target="_blank" class='a1'>Creating and Updating Tables Handout</a></div>
+			</div>
+
+			<div class='solution'>
+				<div class="column1"></div>
+				<div class='date'></div>
+				<div class="column2"><a href="{{url_for('static', filename='A2_handout.pdf')}}" target="_blank" class='a1'><b>W5 Solution</b></a></div>
+			</div>
+
+			<div class="row1">
+				<div class="column1">6</div>
+				<div class='date'>Feb 24</div>
+				<div class="column2"><a href="{{url_for('static', filename='A2_handout.pdf')}}" target="_blank" class='a1'>SQL Views Handout</a></div>
+			</div>
+
+			<div class='solution'>
+				<div class="column1"></div>
+				<div class='date'></div>
+				<div class="column2"><a href="{{url_for('static', filename='A2_handout.pdf')}}" target="_blank" class='a1'><b>W6 Solution</b></a></div>
+			</div>
+
+			<div class="row2">
+				<div class="column1">7</div>
+				<div class='date'>Mar 2</div>
+				<div class="column2"><a href="{{url_for('static', filename='A2_handout.pdf')}}" target="_blank" class='a1'>Basic Webpage Handout</a></div>
+			</div>
+
+			<div class="row1">
+				<div class="column1">8</div>
+				<div class='date'>Mar 9</div>
+				<div class="column2"><a href="{{url_for('static', filename='A2_handout.pdf')}}" target="_blank" class='a1'>Intro to HTML and CSS Handout</a></div>
+			</div>
+
+			<div class="row2">
+				<div class="column1">9</div>
+				<div class='date'>Mar 16</div>
+				<div class="column2"><a href="{{url_for('static', filename='A2_handout.pdf')}}" target="_blank" class='a1'>PHP Handout</a></div>
+			</div>
+
+			<div class="row1">
+				<div class="column1">10</div>
+				<div class='date'>Mar 23</div>
+				<div class="column2"><a href="{{url_for('static', filename='A2_handout.pdf')}}" target="_blank" class='a1'>jQuery Handout</a></div>
+			</div>
+		
+		</div>
+	</div>
+
+	<div>
+		<footer id='end'>
+			<p>You've reached the end of the page, please visit the <strong><a href="https://www.utsc.utoronto.ca/cms/faculty-of-computer-science" target="_blank" class='a1'>faculty of Computer Science at UofT</strong></a> to learn more.</p>
+			Site Design by Raisa Haque and Anagha Vadarevu.
+			
+		</footer>
+	</div>
+
+</body>
+</html>

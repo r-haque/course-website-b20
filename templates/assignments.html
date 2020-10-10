@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="{{url_for('static', filename='styles/assignments.css')}}">
+	<link rel="stylesheet" type="text/css" href="{{url_for('static', filename='styles/common.css')}}">
+	<link href="https://fonts.googleapis.com/css?family=Oxygen&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Fira+Sans&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
+	<meta name="viewport" content="width=device-width, initial-scale=0.6">
+	<link rel="icon" href="/static/tree.png">
+	<title>CSC B20 — Assignments</title>
+</head>
+<body>
+	<nav id='navpages'>
+		<ul>
+			<a href="index.html" class="hbutton">Home</a>
+			<a href="calendar.html"class="hbutton">Calendar</a>
+			<a href="lectures.html" class="hbutton">Lectures</a>
+			<a href="assignments.html"class="hbutton">Assignments</a>
+			<a href="labs.html" class="hbutton">Labs</a>
+			<a href="https://piazza.com/class/k5l8ww7kz8l6f0" target="_blank" class="hbutton">Piazza</a>
+			<a href="https://markus.utsc.utoronto.ca/" target="_blank" class="hbutton">MarkUs</a>
+			<a href="resources.html" class="hbutton">Resources</a>
+		</ul>
+	</nav>
+
+	<div class='title'>
+		<h1>CSC B20 — Assignments</h1>
+	</div>
+
+	<div class='pagebody'>
+		<div class='sub'>
+			<div id=pagebuttons>
+				<a href="#assignments"><button class="pbutton">Assignments</button></a>
+			</div>
+		</div>
+
+		<div class='subtitle' id='assignments'>
+			<div class='block'></div>
+			<h2>Assignments</h2>
+
+			<hr/>
+
+			<p class='content'>
+				<div class="subcont">
+					Here are the assignment and exercise topics, weights, and due dates. I will be posting the exercise and assignment handouts here. All exercises and assignments will be submitted on <a href="https://markus.utsc.utoronto.ca/" target="_blank" class='a2'>Markus</a>.
+				</div>
+			</p>
+
+			<hr/>
+
+			<div class="tablehead">
+				<div id="num"></div>
+				<div id="topic">Topic</div>
+				<div id='desc'>Description</div>
+				<div id="due">Due Date</div>
+			</div>
+
+			<div class="row1">
+				<div class="column1">1.</div>
+				<div class="column2">Relational Algebra and MySQL</div>
+				<div class="description">Worth 15%, Includes 3 parts, <a href="{{url_for('static', filename='A2_handout.pdf')}}" target="_blank" class='a1'>A1 Handout</a></div>
+				<div class="column3">Feb 1 @ 11:59 PM</div>
+			</div>
+
+			<div class="solution">
+				<div class="column1"></div>
+				<div class="column2"></div>
+				<div class="description"><a href="{{url_for('static', filename='A2_handout.pdf')}}" target="_blank" class='a1'><b>Solution to Part 1</b></a></div>
+				<div class="column3"></div>
+			</div>
+
+			<div class="row2">
+				<div class="column1">2.</div>
+				<div class="column2">HTML, CSS, PHP</div>
+				<div class="description">Worth 15%, Includes 2 parts worth 50% each, <a href="{{url_for('static', filename='A2_handout.pdf')}}" target="_blank" class='a1'>A2 Handout</a></div>
+				<div class="column3">Mar 10 @ 11:59 PM</div>
+			</div>
+
+			<div class="row1">
+				<div class="column1">3.</div>
+				<div class="column2">Web Application and Database</div>
+				<div class="description">Worth 15%, <a href="{{url_for('static', filename='A2_handout.pdf')}}" target="_blank" class='a1'>A3 Handout</a></div>
+				<div class="column3">Mar 29 @ 11:59 PM</div>
+			</div>
+
+		</div>
+
+	</div>
+
+	<div>
+		<footer id='end'>
+			<p>You've reached the end of the page, please visit the <strong><a href="https://www.utsc.utoronto.ca/cms/faculty-of-computer-science" target="_blank" class='a1'>faculty of Computer Science at UofT</strong></a> to learn more.</p>
+			Site Design by Raisa Haque and Anagha Vadarevu.
+			
+		</footer>
+	</div>
+
+</body>
+</html>

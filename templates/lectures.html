@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="{{url_for('static', filename='styles/lectures.css')}}">
+	<link rel="stylesheet" type="text/css" href="{{url_for('static', filename='styles/common.css')}}">
+	<link href="https://fonts.googleapis.com/css?family=Oxygen&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Fira+Sans&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
+	<meta name="viewport" content="width=device-width, initial-scale=0.6">
+	<link rel="icon" href="/static/tree.png">
+	<title>CSC B20 — Lectures</title>
+</head>
+<body>
+	<nav id='navpages'>
+		<ul>
+			<a href="index.html" class="hbutton">Home</a>
+			<a href="calendar.html"class="hbutton">Calendar</a>
+			<a href="lectures.html" class="hbutton">Lectures</a>
+			<a href="assignments.html"class="hbutton">Assignments</a>
+			<a href="labs.html" class="hbutton">Labs</a>
+			<a href="https://piazza.com/class/k5l8ww7kz8l6f0" target="_blank" class="hbutton">Piazza</a>
+			<a href="https://markus.utsc.utoronto.ca/" target="_blank" class="hbutton">MarkUs</a>
+			<a href="resources.html" class="hbutton">Resources</a>
+		</ul>
+	</nav>
+
+	<div class='title'>
+		<h1>CSC B20 — Lectures</h1>
+	</div>
+
+	<div class='pagebody'>
+		<div class='sub'>
+			<div id=pagebuttons>
+				<a href="#lectures"><button class="pbutton">Lecture Schedule</button></a>
+			</div>
+		</div>
+
+		<div class='subtitle' id='lectures'>
+			<div class='block'></div>
+			<h2>Lecture Schedule</h2>
+
+			<hr/>
+			<br>
+			<p class='content'>Please print and bring these notes/worksheets to class.</p>
+			<br>
+			<hr/>
+
+			<div class="tablehead">
+				<div id="week">Week</div>
+				<div id='lec'>LEC01</div>
+				<div id="topic">Topic</div>
+				<div id="material">Lecture Material</div>
+			</div>
+
+			<div class="row1">
+				<div class="column1">1</div>
+				<div class='date'>Jan 6</div>
+				<div class="column2">Introduction, Databases background</div>
+				<div class="column3"><a href="{{url_for('static', filename='A2_handout.pdf')}}" target="_blank" class='a1'>Power Point</a>, <a href="{{url_for('static', filename='A2_handout.pdf')}}" target="_blank" class='a1'>Handout</a></div>
+			</div>
+
+			<div class="row2">
+				<div class="column1">2</div>
+				<div class='date'>Jan 13</div>
+				<div class="column2">Schema Diagrams, Relational Algebra</div>
+				<div class="column3"><a href="{{url_for('static', filename='A2_handout.pdf')}}" target="_blank" class='a1'>Power Point</a>, <a href="{{url_for('static', filename='A2_handout.pdf')}}" target="_blank" class='a1'>Worksheet</a>, <a href="{{url_for('static', filename='A2_handout.pdf')}}" target="_blank" class='a1'>Worksheet Solutions</a></div>
+			</div>
+
+			<div class="row1">
+				<div class="column1">3</div>
+				<div class='date'>Jan 20</div>
+				<div class="column2">SQL and MySQL</div>
+				<div class="column3"><a href="{{url_for('static', filename='A2_handout.pdf')}}" target="_blank" class='a1'>Power Point</a>, <a href="{{url_for('static', filename='A2_handout.pdf')}}" target="_blank" class='a1'>Printable PDF MySQL Worksheet</a></div>
+			</div>
+
+			<div class="row2">
+				<div class="column1">4</div>
+				<div class='date'>Jan 27</div>
+				<div class="column2">MySQL Queries, Creating and Editing Tables</div>
+				<div class="column3"><a href="{{url_for('static', filename='A2_handout.pdf')}}" target="_blank" class='a1'>Power Point</a>, <a href="{{url_for('static', filename='A2_handout.pdf')}}" target="_blank" class='a1'>More MySQL Worksheet</a>, <a href="{{url_for('static', filename='A2_handout.pdf')}}" target="_blank" class='a1'>Solutions</a></div>
+			</div>
+
+			<div class='assigndue'>
+				<div class="column1"></div>
+				<div class='date'>Feb 1</div>
+				<div class="column2">Assignment 1 Due, 11:59 PM</div>
+				<div class="column3"></div>
+			</div>
+
+			<div class="row1">
+				<div class="column1">5</div>
+				<div class='date'>Feb 3</div>
+				<div class="column2">MySQL Outer Joins, Views, NULL, string functions, HTML</div>
+				<div class="column3"><a href="{{url_for('static', filename='A2_handout.pdf')}}" target="_blank" class='a1'>Power Point</a>, <a href="{{url_for('static', filename='A2_handout.pdf')}}" target="_blank" class='a1'>MySQL Views Worksheet</a>, <a href="{{url_for('static', filename='A2_handout.pdf')}}" target="_blank" class='a1'>Solutions</a></div>
+			</div>
+
+			<div class='tests'>
+				<div class="column1"></div>
+				<div class='date'>Feb 10</div>
+				<div class="column2">Midterm 5:00 PM</div>
+				<div class="column3"></div>
+			</div>
+
+			<div class="row2">
+				<div class="column1">6</div>
+				<div class='date'>Feb 24</div>
+				<div class="column2">HTML, CSS</div>
+				<div class="column3"><a href="{{url_for('static', filename='A2_handout.pdf')}}" target="_blank" class='a1'>CSS Power Point</a></div>
+			</div>
+
+			<div class="row1">
+				<div class="column1">7</div>
+				<div class='date'>Mar 2</div>
+				<div class="column2">PHP</div>
+				<div class="column3"><a href="{{url_for('static', filename='A2_handout.pdf')}}" target="_blank" class='a1'>Power Point</a></div>
+			</div>
+
+			<div class="row2">
+				<div class="column1">8</div>
+				<div class='date'>Mar 9</div>
+				<div class="column2">PHP and SQL</div>
+				<div class="column3"><a href="{{url_for('static', filename='A2_handout.pdf')}}" target="_blank" class='a1'>Power Point</a></div>
+			</div>
+
+			<div class='assigndue'>
+				<div class="column1"></div>
+				<div class='date'>Mar 10</div>
+				<div class="column2">Assignment 2 Due, 11:59 PM</div>
+				<div class="column3"></div>
+			</div>
+
+			<div class="row1">
+				<div class="column1">9</div>
+				<div class='date'>Mar 16</div>
+				<div class="column2">JavaScript and jQuery</div>
+				<div class="column3"><a href="{{url_for('static', filename='A2_handout.pdf')}}" target="_blank" class='a1'>jQuery Power Point</a></div>
+			</div>
+
+			<div class="row2">
+				<div class="column1">10</div>
+				<div class='date'>Mar 23</div>
+				<div class="column2">jQuery, AJAX, JSON</div>
+				<div class="column3"><a href="{{url_for('static', filename='A2_handout.pdf')}}" target="_blank" class='a1'>Power Point</a></div>
+			</div>
+
+			<div class='assigndue'>
+				<div class="column1"></div>
+				<div class='date'>Mar 29</div>
+				<div class="column2">Assignment 3 Due, 11:59 PM</div>
+				<div class="column3"></div>
+			</div>
+
+			<div class="row1">
+				<div class="column1">11</div>
+				<div class='date'>Mar 30</div>
+				<div class="column2">Last Year's final</div>
+				<div class="column3"><a href="{{url_for('static', filename='A2_handout.pdf')}}" target="_blank" class='a1'>W16 Final</a></div>
+			</div>
+
+			<div class='tests'>
+				<div class="column1"></div>
+				<div class='date'>Apr 14</div>
+				<div class="column2">Final Exam 2:00 PM</div>
+				<div class="column3"></div>
+			</div>
+
+		</div>
+
+	</div>
+
+	<div>
+		<footer id='end'>
+			<p>You've reached the end of the page, please visit the <strong><a href="https://www.utsc.utoronto.ca/cms/faculty-of-computer-science" target="_blank" class='a1'>faculty of Computer Science at UofT</strong></a> to learn more.</p>
+			Site Design by Raisa Haque and Anagha Vadarevu.
+			
+		</footer>
+	</div>
+
+</body>
+</html>

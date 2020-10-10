@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="{{url_for('static', filename='styles/index.css')}}">
+	<link rel="stylesheet" type="text/css" href="{{url_for('static', filename='styles/common.css')}}">
+	<link href="https://fonts.googleapis.com/css?family=Oxygen&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Fira+Sans&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
+	<link rel="icon" href="/static/tree.png">
+	<meta name="viewport" content="width=device-width, initial-scale=0.6">
+	<title>CSC B20 — Home</title>
+</head>
+<body>
+
+	<nav id='navpages'>
+		<ul>
+			<a href="index.html" class="hbutton">Home</a>
+			<a href="/studentwelcome/calendar.html"class="hbutton">Calendar</a>
+			<a href="/studentwelcome/lectures.html" class="hbutton">Lectures</a>
+			<a href="/studentwelcome/assignments.html"class="hbutton">Assignments</a>
+			<a href="/studentwelcome/labs.html" class="hbutton">Labs</a>
+			<a href="/studentwelcome/https://piazza.com/class/k5l8ww7kz8l6f0" target="_blank" class="hbutton">Piazza</a>
+			<a href="/studentwelcome/https://markus.utsc.utoronto.ca/" target="_blank" class="hbutton">MarkUs</a>
+			<a href="/studentwelcome/resources.html" class="hbutton">Resources</a>
+		</ul>
+	</nav>
+
+	<div class='title'>
+		<h1>CSC B20 — Introduction to Databases and Web Applications</h1>
+	</div>
+
+	<div class='pagebody'>
+
+		<div class='sub'>
+			<div id=pagebuttons>
+				<a href="#courseinfo"><button class="pbutton">Course Description</button></a>
+				<a href="#generalinfo"><button class="pbutton">General Information</button></a>
+				<a href="#courseteam"><button class="pbutton">Course Team</button></a>
+			</div>
+		</div>
+
+		<div class='subtitle' id='courseinfo'>
+			<div class='block'></div>
+			<h2>Course Description</h2>
+			<hr/>
+			<p class='content'>
+				A practical introduction to databases and Web app development. Databases: terminology and applications; creating, querying and updating databases; the entity-relationship model for database design. Web documents and applications: static and interactive documents; Web servers and dynamic server-generated content; Web application development and interface with databases.
+		
+				<div class='subcont'>
+					<strong>Prerequisite:</strong> Some experience with programming in an imperative language such as Python, Java or C.
+				</div>
+				
+				<div class='subcont'>
+					<strong>Exclusion:</strong> This course may not be taken after - or concurrently with - any C- or D-level CSC course.
+				</div>
+				
+				<div class='subcont'>
+					<strong>Syllabus:</strong> Click <strong><a href="{{url_for('static', filename='A2_handout.pdf')}}" target="_blank" class='a1'>here</strong></a> to review the syllabus.
+			 	</div>
+
+			</p>
+		</div>
+
+		<div class='subtitle' id='generalinfo'>
+			<div class='block'></div>
+			<h2>General Information</h2>
+			<hr/>
+			<p class='content'>
+				<div class='subcont'>
+				<strong>Instructor:</strong> Anna Bretscher
+				</div>
+
+				<div class='subcont'>
+				<strong>Email:</strong> <strong><a href="mailto:bretscher@utsc.utoronto.ca" class='a1'>bretscher@utsc.utoronto.ca</strong></a>
+				</div>
+
+				<div class='subcont'>
+				<strong>Phone:</strong> (416) 208-4745
+				</div>
+
+				<div class='subcont'>
+				<strong>Lectures:</strong> Mondays 9:15-11:00 in HW 216
+				</div>
+
+				<div class='subcont'>
+				<strong>Office:</strong> IC493
+				</div>
+
+				<div class='subcont'>
+				<strong>Office Hours:</strong> Wednesday 11:00-12:00
+				</div>
+
+				<div class='subcont'>
+				<strong>Discussion Board:</strong> <a href="https://piazza.com/class/k5l8ww7kz8l6f0" target="_blank" class='a1'><strong>https://piazza.com/class/k5l8ww7kz8l6f0</strong></a>
+				</div>
+
+				<div class='subcont'>
+				<strong>MarkUs:</strong> <a href="https://markus.utsc.utoronto.ca/" target="_blank" class='a1'><strong>https://markus.utsc.utoronto.ca/</strong></a>
+				</div>
+
+			</p>
+		</div>
+
+		<div class='subtitle' id='courseteam'>
+			<div class='block'></div>
+			<h2>Course Team</h2>
+			<hr/>
+			<div class='team'>
+				<div class="teammem">
+					<p class='pos'><strong>Instructor</strong></p>
+					<img src="/static/anna.jpg" alt="Instructor">
+					<p class='contact'><strong><a href="mailto:bretscher@utsc.utoronto.ca" class='a1'>Anna Bretscher</strong></a></p>		
+				</div>
+				<div class="teammem">
+					<p class='pos'><strong>TA</strong></p>
+					<img src="/static/kathleen.jpg" alt="TA">
+					<p class='contact'><strong><a href="mailto:bretscher@utsc.utoronto.ca" class='a1'>Kathleen Smith</strong></a></p>		
+				</div>
+				<div class="teammem">
+					<p class='pos'><strong>TA</strong></p>
+					<img src="/static/paco.jpg" alt="TA">
+					<p class='contact'><strong><a href="mailto:bretscher@utsc.utoronto.ca" class='a1'>Paco Estrada</strong></a></p>			
+				</div>
+				<div class="teammem">
+					<p class='pos'><strong>TA</strong></p>
+					<img src="/static/nick.jpg" alt="TA">
+					<p class='contact'><strong><a href="mailto:bretscher@utsc.utoronto.ca" class='a1'>Nick Cheng</strong></a></p>		
+				</div>
+				<div class="teammem">
+					<p class='pos'><strong>TA</strong></p>
+					<img src="/static/anya.jpg" alt="TA">
+					<p class='contact'><strong><a href="mailto:bretscher@utsc.utoronto.ca" class='a1'>Anya Tafliovich</strong></a></p>		
+				</div>
+
+			</div>
+
+		</div>
+
+	</div>
+
+	<div>
+		<footer id='end'>
+			<p>You've reached the end of the page, please visit the <strong><a href="https://www.utsc.utoronto.ca/cms/faculty-of-computer-science" target="_blank" class='a1'>faculty of Computer Science at UofT</strong></a> to learn more.</p>
+			Site Design by Raisa Haque and Anagha Vadarevu.			
+		</footer>
+	</div>
+
+</body>
+</html>

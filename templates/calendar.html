@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="{{url_for('static', filename='styles/calendar.css')}}">
+	<link rel="stylesheet" type="text/css" href="{{url_for('static', filename='styles/common.css')}}">
+	<link href="https://fonts.googleapis.com/css?family=Oxygen&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Fira+Sans&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Bellota+Text&display=swap" rel="stylesheet">
+	<meta name="viewport" content="width=device-width, initial-scale=0.6">
+	<link rel="icon" href="/static/tree.png">
+	<title>CSC B20 — Calendar</title>
+</head>
+<body>
+	<nav id='navpages'>
+		<ul>
+			<a href="index.html" class="hbutton">Home</a>
+			<a href="calendar.html"class="hbutton">Calendar</a>
+			<a href="lectures.html" class="hbutton">Lectures</a>
+			<a href="assignments.html"class="hbutton">Assignments</a>
+			<a href="labs.html" class="hbutton">Labs</a>
+			<a href="https://piazza.com/class/k5l8ww7kz8l6f0" target="_blank" class="hbutton">Piazza</a>
+			<a href="https://markus.utsc.utoronto.ca/" target="_blank" class="hbutton">MarkUs</a>
+			<a href="resources.html" class="hbutton">Resources</a>
+		</ul>
+	</nav>
+
+	<div class='title'>
+		<h1>CSC B20 — Calendar</h1>
+	</div>
+
+	<div class='pagebody'>
+		<div class='sub'>
+			<div id=pagebuttons>
+				<a href="#calendar"><button class="pbutton">Calendar</button></a>
+				<a href="#news"><button class="pbutton">News</button></a>
+				<a href="#midterm"><button class="pbutton">Midterm Info</button></a>
+			</div>
+		</div>
+
+		<div class='subtitle' id='calendar'>
+			<div class='block'></div>
+			<h2>Office Hours and Due Dates</h2>
+			<hr/>
+
+			<p class='calendar'><iframe src="https://calendar.google.com/calendar/embed?height=700&amp;wkst=1&amp;bgcolor=%23ffffff&amp;ctz=America%2FToronto&amp;src=djFhN2xjYjVtZDM2MnMxY2VxZjByb2hpZ3NAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&amp;color=%23F6BF26"></iframe></p>
+		</div>
+
+		<div class='subtitle' id='news'>
+			<div class='block'></div>
+			<h2>News</h2>
+			<hr/>
+			<div class='newsblock'>
+				<div class="newsitem1">
+					<p class='newstitle'>Welcome to CSC B20!</p>
+					<b class='newsdate'>January 6, 3:00 PM</b>
+						<p class="newsbody">
+							Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+							tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+							quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+							consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+							cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+							proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+						</p>
+				</div>
+				<div class="newsitem3">
+					<p class='newstitle'>Tutorials Begin</p>
+					<b class='newsdate'>January 12, 5:00 PM</b>
+						<p class="newsbody">
+							Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+							tempor incididunt ut labore et dolore magna aliqua. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+						</p>
+				</div>
+				
+			</div>
+			<div class='newsblock'>
+				<div class="newsitem2">
+					<p class='newstitle'>Assignment 1 Out</p>
+					<b class='newsdate'>January 16, 9:00 AM</b>
+						<p class="newsbody">
+							Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+							tempor incididunt ut labore et dolore magna aliqua.Ut enim ad minim veniam,
+							quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+							consequat.Duis aute irure dolor in reprehenderit.
+						</p>
+				</div>
+				<div class="newsitem1">
+					<p class='newstitle'>Midterm Date</p>
+					<b class='newsdate'>January 20, 7:00 PM</b>
+						<p class="newsbody">
+							Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+							tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+							quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+							consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+							cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+							proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+						</p>
+				</div>
+			</div>
+			<div class='newsblock'>
+				<div class="newsitem3">
+					<p class='newstitle'>Assignment 2 Out</p>
+					<b class='newsdate'>February 23, 9:00 AM</b>
+						<p class="newsbody">
+							Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+							tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+							quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+							consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+							cillum dolore eu fugiat nulla pariatur.
+						</p>
+				</div>
+				<div class="newsitem1">
+					<p class='newstitle'>A2 Deadline Extended</p>
+					<b class='newsdate'>March 5, 2:00 PM</b>
+						<p class="newsbody">
+							Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+							tempor incididunt ut labore et dolore magna aliqua. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+						</p>
+				</div>
+			</div>
+
+			<div class='newsblock'>
+				<div class="newsitem1">
+					<p class='newstitle'>Assignment 3 Out</p>
+					<b class='newsdate'>March 15, 9:00 AM</b>
+						<p class="newsbody">
+							Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+							tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+							quis nostrud exercitation.
+						</p>
+				</div>
+				<div class="newsitem2">
+					<p class='newstitle'>Final Exam Date</p>
+					<b class='newsdate'>March 21, 6:00 PM</b>
+						<p class="newsbody">
+							Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+							tempor incididunt ut labore et dolore magna aliqua. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Duis aute irure dolor in reprehenderit in voluptate velit esse
+							cillum dolore eu fugiat nulla pariatur. Ullamco laboris nisi ut aliquip ex ea commodo
+							consequat.
+						</p>
+				</div>
+			</div>
+		</div>
+
+		<div class='subtitle' id='midterm'>
+			<div class='block'></div>
+			<h2>Midterm Info</h2>
+			<hr/>
+			<p class='content'>
+				There will be one midterm. The midterm will be 75min in length. You should go to either HW215 or HW216 depending on your last name as shown here.
+
+				<div id='image'>
+					<img src="/static/rooms.jpg" alt="Room Allocations">
+				</div>
+
+				<hr>
+				<br>
+
+				<div class='list'>
+					<strong>Preparing for the midterm:</strong> 
+					<div class='subcont'>
+						<ul>
+							<li>Understand all parts of A1.</li>
+							<li>The midterm will cover everything on databases that we did from the start until part way through the week 6 lecture.</li>
+						</ul>
+					</div>
+
+					<div>
+						Once you have done some preparation, you can practice on a previous <strong><a href="{{url_for('static', filename='A2_handout.pdf')}}" target="_blank" class='a1'>midterm</strong></a>
+			 		</div>
+				</div>
+
+			</p>
+		</div>
+
+	</div>
+
+	<div>
+		<footer id='end'>
+			<p>You've reached the end of the page, please visit the <strong><a href="https://www.utsc.utoronto.ca/cms/faculty-of-computer-science" target="_blank" class='a1'>faculty of Computer Science at UofT</strong></a> to learn more.</p>
+			Site Design by Raisa Haque and Anagha Vadarevu.
+			
+		</footer>
+	</div>
+</body>
+</html>

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
+	<link rel="stylesheet" type="text/css" href="{{url_for('static', filename='styles/feedback.css')}}">
+	<!-- <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='styles/common.css')}}"> -->
+	<link href="https://fonts.googleapis.com/css?family=Oxygen&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Fira+Sans&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
+	<meta name="viewport" content="width=device-width, initial-scale=0.6">
+	<title>Anonymous Feedback</title>
+</head>
+<body>
+	<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="nav-shadow">
+		<div class="container">
+		<a class="navbar-brand">CSC B20</a>
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+		  <span class="navbar-toggler-icon"></span>
+		</button>
+		<div class="collapse navbar-collapse" id="navbarText">
+		  <ul class="navbar-nav mr-auto">
+			<li class="nav-item ml-3">
+			  <a class="nav-link" href="/studentwelcome">Home</a>
+			</li>
+			<li class="nav-item active ml-3">
+			  <a class="nav-link" href="/studentwelcome/feedback">Feedback</a>
+			</li>
+			<li class="nav-item dropdown ml-3">
+			  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+				Marks
+			  </a>
+			  <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+				<a class="dropdown-item" href="/studentwelcome/marks">My Marks</a>
+				<a class="dropdown-item" href="/marks/remarkrequest">Request Regrade</a>
+			  </div>
+			</li>
+			<li class="nav-item ml-3">
+			  <a class="nav-link" href="/studentwelcome/index.html" target="_blank">Course Website <i class="fas fa-external-link-alt"></i></a>
+			</li>
+		  </ul>
+		  <span class="navbar-text">
+			<a class="nav-link" href="/logout"><i class="fas fa-sign-out-alt"></i> Logout</a>
+		  </span>
+		</div>
+	  </div>
+	  </nav>
+
+	  <form method="post" class="form-signin">
+		<div class="m-3">
+			<h2 class="h1 text-center"> Anonymous Feedback  </h2>
+
+			<h1 class="h5 mt-3 mb-3 text-center font-weight-normal">Use the space below to send a message to any of the instructors regarding the course and the resources provided.</h1>
+			<select name="instructors"  class="form-control" required>
+				<option value="" disabled selected>Choose an Instructor</option>
+				<option value="Anna Bretscher"> Anna Bretscher </option>
+				<option value="Kathleen Smith"> Kathleen Smith </option>
+				<option value="Paco Estrada"> Paco Estrada </option>
+				<option value="Nick Cheng"> Nick Cheng </option>
+				<option value="Anya Tafliovich"> Anya Tafliovich </option>
+
+			</select>
+
+			<div class="mb-0 mt-3 form-group">
+				<label>What do you like about the teaching?</label>
+				<textarea class="form-control" rows="1" name='like' required></textarea>
+			</div>
+
+			<div class="mb-0 mt-3 form-group">
+				<label>How could this instructor improve classes?</label>
+				<textarea class="form-control" rows="3" name='recommend' required></textarea>
+			</div>
+
+			<div class="mb-0 mt-3 form-group">
+				<label>What do you like about the labs?</label>
+				<textarea class="form-control" rows="1" name='labs' required></textarea>
+			</div>
+
+			<div class="mb-0 mt-3 form-group">
+				<label>How could labs be improved?</label>
+				<textarea class="form-control" rows="3" name='improve' required></textarea>
+			</div>
+
+			<button class="btn btn-lg btn-success btn-block mt-3" type="submit">Submit Feedback</button>
+		</div>	
+
+	  </form>
+	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+</body>
+</html>

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Remark Requests</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+		integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
+	<link href="https://fonts.googleapis.com/css?family=Oxygen&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="{{url_for('static', filename='styles/instructRemark.css')}}">
+</head>
+
+<body>
+	<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="nav-shadow">
+		<div class="container">
+			<a class="navbar-brand">CSC B20</a>
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+				aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarText">
+				<ul class="navbar-nav mr-auto">
+					<li class="nav-item ml-3">
+						<a class="nav-link" href="/instructorwelcome">Home</a>
+					</li>
+					<li class="nav-item ml-3">
+						<a class="nav-link" href="/instructorwelcome/feedback">Feedback</a>
+					</li>
+					<li class="nav-item active dropdown ml-3">
+						<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+							data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+							Marks
+						</a>
+						<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+							<a class="dropdown-item" href="/instructorwelcome/studentmarks">All Marks</a>
+							<a class="dropdown-item" href="/instructorwelcome/entermarks">Marks Entry</a>
+							<a class="dropdown-item" href="/instructorwelcome/remarks"><strong>Regrade
+									Requests</strong></a>
+						</div>
+					</li>
+					<li class="nav-item ml-3">
+						<a class="nav-link" href="index.html" target="_blank">Course Website <i
+								class="fas fa-external-link-alt"></i></a>
+					</li>
+				</ul>
+				<span class="navbar-text">
+					<a class="nav-link" href="/logout"><i class="fas fa-sign-out-alt"></i> Logout</a>
+				</span>
+			</div>
+		</div>
+	</nav>
+
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-9">
+				<h1 class="display-4 text-center text-lg-left text-light"> Remark Requests </h1>
+
+				<table class="table text-center">
+					<thead class="thead-dark">
+						<tr>
+							<th scope="col">First Name</th>
+							<th scope="col">Last Name</th>
+							<th scope="col">ID</th>
+							<th scope="col">Assessment</th>
+							<th scope="col">Reason for Remark</th>
+						</tr>
+					</thead>
+					<tbody>
+						{% for item in remark %}
+						<tr>
+							<th scope="row">{{item['fName']}}</th>
+							<td>{{item['lName']}}</td>
+							<td>{{item['ID']}}</td>
+							<td>{{item['testtype']}}</td>
+							<td>{{item['reason']}}</td>
+						</tr>
+						{% endfor %}
+					</tbody>
+				</table>
+			</div>
+			<div class="col-lg-3">
+				<form class="p-2" method="post" id="regrade">
+					<h5 class="font-weight-bold text-center pt-2 text-success">Change A Grade</h5>
+					<div class="form-group row p-3">
+						<select name="studentid" class="form-control mb-1" required>
+							<option value="" disabled selected hidden>Choose a student</option>
+							{% for item in studentid %}
+								<option>{{item['ID']}}</option>
+							{% endfor %}
+						</select>
+						<select name="assessment" class="form-control" required>
+							<option value="" disabled selected hidden>Choose an assessment</option>
+							<option value="Assignment1"> Assignment 1 </option>
+							<option value="Assignment2"> Assignment 2 </option>
+							<option value="Assignment3"> Assignment 3 </option>
+							<option value="Labs"> Labs </option>
+							<option value="Midterm"> Midterm </option>
+							<option value="FinalExam"> Final Exam </option>
+						</select>
+						<input type="number" id="mark" name="mark" class="form-control" placeholder="Enter Mark" required>
+						<button class="btn btn-lg btn-success btn-block mt-4" type="submit">Enter Changed Grade</button>
+					</div>
+				  </form>
+			</div>
+		</div>
+
+
+	</div>
+
+	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+		integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+		crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+		integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+		crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+		integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+		crossorigin="anonymous"></script>
+</body>
+
+</html>
