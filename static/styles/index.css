@@ -1,0 +1,44 @@
+.a1{
+	padding-right: 3.5px;
+	padding-left: 3.5px;
+	text-decoration: none;
+	color: #DA3E52;
+	transition: color 0.2s ease 0.1s;
+
+}
+
+.a1:hover{
+	color: #5BD34C;
+	text-decoration: underline;
+}
+
+.team{
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	flex-wrap: wrap;
+}
+
+.teammem{
+	display:flex;
+	flex-direction: column;
+	justify-content: space-around;
+	text-align: center;
+
+}
+
+img{
+	margin-top: 0px;
+	margin-bottom: 1px; 
+	width: 120px;
+}
+
+.pos{
+	margin-bottom: 1px;
+}
+
+.contact{
+	margin-top: 5px;
+}
+
+

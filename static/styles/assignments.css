@@ -1,0 +1,96 @@
+.a1{
+	padding-right: 3.5px;
+	padding-left: 3.5px;
+	text-decoration: none;
+	color: #DA3E52;
+	transition: color 0.2s ease 0.1s;
+
+}
+
+.a1:hover{
+	color: #5BD34C;
+	text-decoration: underline;
+}
+
+.tablehead{
+	display: flex;
+	background-color: #13293D;
+	font-family: 'Fira Sans', sans-serif;
+	font-size: 16px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+
+.row1{
+	display: flex;
+	padding-top: 8px;
+	padding-bottom: 8px;
+}
+
+.row2{
+	display: flex;
+	background-color: #E8E8E8;
+	padding-top: 8px;
+	padding-bottom: 8px;
+}
+
+.solution{
+	display: flex;
+	background-color: #ADD9ED;
+	padding-top: 8px;
+	padding-bottom: 8px;
+}
+
+#num{
+	flex-basis: 4%;
+	color: white;
+}
+
+#topic{
+	flex-basis: 16%;
+	color: white;
+	margin-right: 20px;
+}
+
+#desc{
+	flex-basis: 40%;
+	color: white;
+	margin-right: 20px;
+}
+
+#due{
+	flex-basis: 40%;
+	color: white;
+}
+
+.column1{
+	text-align: center;
+	flex-basis: 4%;
+}
+
+.column2{
+	flex-basis: 16%;
+	margin-right: 20px;
+}
+
+.description{
+	flex-basis: 40%;
+	margin-right: 20px;
+}
+
+.column3{
+	flex-basis: 40%;
+}
+
+.a2{
+	font-weight: bold;
+	text-decoration: none;
+	color: #DA3E52;
+	transition: color 0.2s ease 0.1s;
+
+}
+
+.a2:hover{
+	color: #5BD34C;
+	text-decoration: underline;
+}

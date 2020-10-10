@@ -1,0 +1,85 @@
+.a1{
+	text-decoration: none;
+	color: #DA3E52;
+	transition: color 0.2s ease 0.1s;
+
+}
+
+.a1:hover{
+	color: #5BD34C;
+	text-decoration: underline;
+}
+
+.tablehead{
+	display: flex;
+	background-color: #13293D;
+	font-family: 'Fira Sans', sans-serif;
+	font-size: 16px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+
+.row1{
+	display: flex;
+	padding-top: 5px;
+	padding-bottom: 5px;
+}
+
+.row2{
+	display: flex;
+	background-color: #E8E8E8;
+	padding-top: 5px;
+	padding-bottom: 5px;
+}
+
+.assigndue{
+	display: flex;
+	background-color: #F27B8B;
+	padding-top: 8px;
+	padding-bottom: 8px;
+}
+
+.tests{
+	display: flex;
+	background-color: #ADD9ED;
+	padding-top: 12px;
+	padding-bottom: 12px;
+}
+
+#week{
+	flex-basis: 8%;
+	color: white;
+	text-align: center;
+}
+
+#lec{
+	flex-basis: 12%;
+	color: white;
+}
+
+#topic{
+	flex-basis: 40%;
+	color: white;
+}
+
+#material{
+	flex-basis: 40%;
+	color: white;
+}
+
+.column1{
+	text-align: center;
+	flex-basis: 8%;
+}
+
+.date{
+	flex-basis: 12%
+}
+
+.column2{
+	flex-basis: 40%;
+}
+
+.column3{
+	flex-basis: 40%;
+}

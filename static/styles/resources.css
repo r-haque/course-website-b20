@@ -1,0 +1,52 @@
+.a1{
+	padding-right: 3.5px;
+	padding-left: 3.5px;
+	text-decoration: none;
+	color: #DA3E52;
+	transition: color 0.2s ease 0.1s;
+
+}
+
+.a1:hover{
+	color: #5BD34C;
+	text-decoration: underline;
+}
+
+.a2{
+	text-decoration: none;
+	color: #DA3E52;
+	transition: color 0.2s ease 0.1s;
+
+}
+
+.a2:hover{
+	color: #5BD34C;
+	text-decoration: underline;
+}
+
+.list{
+	display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+	padding-bottom: 50px;
+	margin-right: 20px;
+	margin-left: 20px;
+	margin-top: 0px;
+}
+
+li{
+	margin-top: 8px;
+}
+
+.subitem{
+	margin-left: 50px;
+	margin-right: 30px;
+	list-style-type: circle; 
+	margin-top: 6px;
+}
+
+.login{
+	font-family: 'Exo 2', sans-serif;
+	color: #13293D;
+
+}

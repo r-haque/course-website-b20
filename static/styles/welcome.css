@@ -1,0 +1,37 @@
+body{
+	background: linear-gradient(rgba(26, 26, 26, 0.6),rgba(24, 24, 24, 0.6)),url("https://images.unsplash.com/photo-1498243691581-b145c3f54a5a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80");
+	background-size: cover;
+	background-position: center;
+	font-family: 'Lato', sans-serif;
+	color: white;
+	margin-top: 60px;
+}
+
+html{
+	height: 100%;
+}
+
+#content{
+	text-align: center;
+	text-shadow: 0px 4px 3px rgba(0,0,0,0.4),
+				 0px 8px 13px rgba(0,0,0,0.1),
+				 0px 18px 23px rgba(0,0,0,0.1);
+	padding-top: 35vh;
+}
+
+h1{
+	font-weight: 700;
+	font-size: 5em;
+}
+
+hr{
+	width: 400px;
+	border-top: 1px solid #f8f8f8;
+	border-bottom: 1px solid rgba(0,0,0,0.2);
+}
+
+#nav-shadow{
+	-webkit-box-shadow: 3px 9px 61px -8px rgba(0, 0, 0, 0.589);
+	-moz-box-shadow: 3px 9px 61px -8px rgba(0, 0, 0, 0.555);
+	box-shadow: 3px 9px 61px -8px rgba(0, 0, 0, 0.562);
+}
