@@ -40,6 +40,7 @@ def close_connection(exception):
         # close the database if we are connected to it
         db.close()
 
+########## HELPER FUNCTIONS ##########
 def get_name():
     sql = """
         SELECT fName
@@ -76,6 +77,18 @@ def get_user_type():
     results = query_db(sql, [session['username']], one=False)
     return results[0][0]
 
+def check_exists(cur_user_name, cur_id):
+    sql = """
+        SELECT *
+        FROM LoginTbl
+        WHERE username = ? OR ID=?;
+        """
+    results = query_db(sql, [cur_user_name, cur_id], one=False)
+    return results
+
+##################################################################
+
+########## LOGIN/REGISTRATION PAGES ##########
 @app.route('/', methods=['GET','POST'])
 def login():
     if request.method=='POST':
@@ -114,49 +127,53 @@ def userRegister():
         password = request.form.get('password')
         profession = request.form.get('profession')
         ID = request.form.get('id')
+
+        if len(check_exists(username, ID)) != 0:
+            flash('Someone with that username/ID already exists. Please try again.')
+            return redirect(url_for('login')) 
+            
         sql = ('INSERT INTO LoginTbl (ID,username,password,fName,lName,profession) VALUES(?, ?, ?, ?, ?, ?)')
         g.db.execute(sql,(ID, username, password, firstname, lastname, profession))
         g.db.commit()
         g.db.close()
-        flash('You were successfully signed up')
+
+        if profession.lower() == 'student':
+            add_student_to_db(ID, firstname, lastname)
+        elif profession.lower() == 'instructor':
+            add_instructor_to_db(ID, username, password, firstname, lastname)
+
+        flash('You were successfully signed up!')
         return redirect(url_for('login'))       
     else:
         return render_template('register.html')
+
+def add_student_to_db(id, fname, lname):
+    g.db=sqlite3.connect('assignment3.db')
+    sql = ('INSERT INTO Students VALUES(?, ?, ?)')
+    g.db.execute(sql,(id, fname, lname))
+    g.db.commit()
+    sql = ('INSERT INTO Marks VALUES(?, ?, ?, ?, ?, ?, ?, ?)')
+    g.db.execute(sql,(id, None, None, None, None, None, None, fname))
+    g.db.commit()
+    g.db.close()
+
+def add_instructor_to_db(id, username, password, fname, lname):
+    g.db=sqlite3.connect('assignment3.db')
+    sql = ('INSERT INTO Instructors VALUES(?, ?, ?, ?, ?)')
+    g.db.execute(sql,(id, username, password, fname, lname))
+    g.db.commit()
+    g.db.close()
 
 @app.route('/loginregnew')
 def tryagain():
     return redirect(url_for('login'))
 
+##################################################################
 
-@app.route('/welcome')
-def welcome():
-    name = get_name()
-    user_type = get_user_type()
-    if user_type.lower() == "student":
-        return render_template('welcome.html', name=name)
-    else:
-        return render_template('welcomeInstruct.html', name=name)
-
+########## STATIC HTML/CSS PAGES ##########
 @app.route('/index.html')
 def insidepage():
     return render_template('index.html')
-
-@app.route('/feedback_form', methods=['POST','GET'])
-def feedback():
-    g.db=sqlite3.connect('assignment3.db')
-    if request.method=='POST':
-        instructor = request.form.get('instructors')
-        question1 = request.form.get('like')
-        question2 = request.form.get('recommend')
-        question3 = request.form.get('labs')
-        question4 = request.form.get('improve')
-        sql = ('INSERT INTO feedback (instructorName,question1,question2,question3,question4) VALUES(?, ?, ?, ?, ?)')
-        g.db.execute(sql,(instructor, question1, question2, question3, question4))
-        g.db.commit()
-        g.db.close()
-        return redirect(url_for('generateWelcome'))       
-    else:
-        return render_template('feedback.html')
 
 @app.route('/calendar.html')
 def calendar():
@@ -178,6 +195,42 @@ def labs():
 def resources():
     return render_template('resources.html')
 
+##################################################################
+
+########## WELCOME PAGE TO GREET STUDENT/INSTRUCTOR ##########
+@app.route('/welcome')
+def welcome():
+    name = get_name()
+    user_type = get_user_type()
+    if user_type.lower() == "student":
+        return render_template('welcome.html', name=name)
+    else:
+        return render_template('welcomeInstruct.html', name=name)
+
+##################################################################
+
+########## STUDENT USER PAGES ##########
+@app.route('/feedback_form', methods=['POST','GET'])
+def feedback():
+    g.db=sqlite3.connect('assignment3.db')
+    if request.method=='POST':
+        instructor = request.form.get('instructors')
+        question1 = request.form.get('like')
+        question2 = request.form.get('recommend')
+        question3 = request.form.get('labs')
+        question4 = request.form.get('improve')
+        sql = ('INSERT INTO feedback (instructorName,question1,question2,question3,question4) VALUES(?, ?, ?, ?, ?)')
+        g.db.execute(sql,(instructor, question1, question2, question3, question4))
+        g.db.commit()
+        g.db.close()
+        return redirect(url_for('welcome'))       
+    db=get_db()
+    db.row_factory = make_dicts
+    instruct = []
+    for i in query_db('select fName, lName from Instructors',args=(),one=False):
+        instruct.append(i)
+    db.close()
+    return render_template('feedback.html', instruct=instruct)
     
 #Showing grades to the user
 @app.route('/marks')
@@ -195,6 +248,27 @@ def printmarks():
     db.close()
     return render_template('marks.html',student=students)
 
+#Submit Remark Request
+@app.route('/marks/remarkrequest', methods=['POST','GET'])
+def studentrequest():
+    g.db=sqlite3.connect('assignment3.db')
+    if request.method=='POST':
+        firstname = request.form.get('firstname')
+        lastname = request.form.get('lastname')
+        ID = request.form.get('studentnumber')
+        assessment = request.form.get('testtype')
+        reason = request.form.get('reason')    
+        sql = ('INSERT INTO remarkRequest (fName,lName,ID,testtype,reason) VALUES(?, ?, ?, ?, ?)')
+        g.db.execute(sql,(firstname, lastname, ID, assessment, reason))
+        g.db.commit()
+        g.db.close()
+        return redirect(url_for('printmarks', name = firstname+" "+lastname))        
+    else:
+        return render_template('remarkrequest.html')
+    
+######################################################################
+
+########## INSTRUCTOR USER PAGES ##########
 #Showing all grades to the instructor
 @app.route('/studentmarks')
 def instrMarks():
@@ -209,16 +283,6 @@ def instrMarks():
 #Showing feedback to the instructor
 @app.route('/feedback')
 def instrFeedback():
-    feedback = []
-    name = get_full_name()
-    db=get_db()
-    db.row_factory = make_dicts
-    for instructor in query_db('select * from feedback where instructorName=?',[name],one=False):
-        feedback.append(instructor)
-    db.close()   
-    return render_template('instructFeedback.html', feedback=feedback)
-
-def smthfeedback():
     feedback = []
     name = get_full_name()
     db=get_db()
@@ -292,24 +356,6 @@ def entermarks():
         studentids.append(id)
     db.close()        
     return render_template('enterMarks.html', studentid=studentids)
-
-#Submit Remark Request
-@app.route('/marks/remarkrequest', methods=['POST','GET'])
-def studentrequest():
-    g.db=sqlite3.connect('assignment3.db')
-    if request.method=='POST':
-        firstname = request.form.get('firstname')
-        lastname = request.form.get('lastname')
-        ID = request.form.get('studentnumber')
-        assessment = request.form.get('testtype')
-        reason = request.form.get('reason')    
-        sql = ('INSERT INTO remarkRequest (fName,lName,ID,testtype,reason) VALUES(?, ?, ?, ?, ?)')
-        g.db.execute(sql,(firstname, lastname, ID, assessment, reason))
-        g.db.commit()
-        g.db.close()
-        return redirect(url_for('printmarks', name = firstname+" "+lastname))        
-    else:
-        return render_template('remarkrequest.html')
 
 if __name__ == '__main__':
     app.run(debug=True)
