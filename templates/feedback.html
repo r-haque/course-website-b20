@@ -53,12 +53,9 @@
 			<h1 class="h5 mt-3 mb-3 text-center font-weight-normal">Use the space below to send a message to any of the instructors regarding the course and the resources provided.</h1>
 			<select name="instructors"  class="form-control" required>
 				<option value="" disabled selected>Choose an Instructor</option>
-				<option value="Anna Bretscher"> Anna Bretscher </option>
-				<option value="Kathleen Smith"> Kathleen Smith </option>
-				<option value="Paco Estrada"> Paco Estrada </option>
-				<option value="Nick Cheng"> Nick Cheng </option>
-				<option value="Anya Tafliovich"> Anya Tafliovich </option>
-
+				{% for item in instruct %}
+					<option>{{item['fName'] + " " + item['lName']}}</option>
+				{% endfor %}
 			</select>
 
 			<div class="mb-0 mt-3 form-group">

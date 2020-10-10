@@ -41,6 +41,8 @@ def close_connection(exception):
         db.close()
 
 ########## HELPER FUNCTIONS ##########
+#gets first name of current user in session
+#greets user with name
 def get_name():
     sql = """
         SELECT fName
@@ -50,6 +52,7 @@ def get_name():
     results = query_db(sql, [session['username']], one=False)
     return results[0][0]
 
+#gets full name of current user in session
 def get_full_name():
     sql = """
         SELECT fName, lName
@@ -59,6 +62,7 @@ def get_full_name():
     results = query_db(sql, [session['username']], one=False)
     return results[0][0] + " " + results[0][1]
 
+#gets id of current user in session
 def get_id():
     sql = """
         SELECT ID
@@ -68,6 +72,7 @@ def get_id():
     results = query_db(sql, [session['username']], one=False)
     return results[0][0]
 
+#gets user type (student/instructor) of current user in session
 def get_user_type():
     sql = """
         SELECT profession
@@ -77,6 +82,7 @@ def get_user_type():
     results = query_db(sql, [session['username']], one=False)
     return results[0][0]
 
+#when registering, checks if username/id already exists in the database
 def check_exists(cur_user_name, cur_id):
     sql = """
         SELECT *
@@ -89,6 +95,7 @@ def check_exists(cur_user_name, cur_id):
 ##################################################################
 
 ########## LOGIN/REGISTRATION PAGES ##########
+#login pages
 @app.route('/', methods=['GET','POST'])
 def login():
     if request.method=='POST':
@@ -106,18 +113,22 @@ def login():
     else:
         return render_template('loginregnew.html')
 
+#if username/password details don't match, user is redirected
 @app.route('/loginfailed')
 def login_fail():
     flash('Invalid username/password entered')
     return redirect(url_for('login'))
 
+#logs user out of session
 @app.route('/logout')
 def logout():
     session.pop('username', None)
     flash('You were successfully logged out')
     return redirect(url_for('login'))
 
-@app.route('/register.html', methods=['POST','GET'])
+#gets user registration form
+#stores new user registration data in database
+@app.route('/register', methods=['POST','GET'])
 def userRegister():
     g.db=sqlite3.connect('assignment3.db')
     if request.method=='POST':
@@ -147,6 +158,7 @@ def userRegister():
     else:
         return render_template('register.html')
 
+#when a new user of type student registers, they are added to the marks and students databases
 def add_student_to_db(id, fname, lname):
     g.db=sqlite3.connect('assignment3.db')
     sql = ('INSERT INTO Students VALUES(?, ?, ?)')
@@ -157,6 +169,7 @@ def add_student_to_db(id, fname, lname):
     g.db.commit()
     g.db.close()
 
+#when a new user of type instructor register, they are added to the instructors database
 def add_instructor_to_db(id, username, password, fname, lname):
     g.db=sqlite3.connect('assignment3.db')
     sql = ('INSERT INTO Instructors VALUES(?, ?, ?, ?, ?)')
@@ -210,6 +223,7 @@ def welcome():
 ##################################################################
 
 ########## STUDENT USER PAGES ##########
+#lets students leave feedback for instructors
 @app.route('/feedback_form', methods=['POST','GET'])
 def feedback():
     g.db=sqlite3.connect('assignment3.db')
@@ -232,7 +246,7 @@ def feedback():
     db.close()
     return render_template('feedback.html', instruct=instruct)
     
-#Showing grades to the user
+#Showing grades to the student
 @app.route('/marks')
 def printmarks():
     id = get_id()
@@ -269,7 +283,7 @@ def studentrequest():
 ######################################################################
 
 ########## INSTRUCTOR USER PAGES ##########
-#Showing all grades to the instructor
+#Showing all student grades to the instructor
 @app.route('/studentmarks')
 def instrMarks():
     db=get_db()
@@ -293,6 +307,7 @@ def instrFeedback():
     return render_template('instructFeedback.html', feedback=feedback)
 
 #Showing remark requests to the instructor
+#lets instructor submit a mark change
 @app.route('/remarks', methods=['POST','GET'])
 def remarkrequests():
     g.db=sqlite3.connect('assignment3.db')
@@ -325,6 +340,18 @@ def remarkrequests():
         studentids.append(id)    
     db.close()    
     return render_template('instructRemark.html',remark=remarks,studentid=studentids)
+
+#lets instructor delete a remark request after it has been dealt with
+@app.route('/delete', methods=['POST'])
+def delete_request():
+    g.db=sqlite3.connect('assignment3.db')
+    sql = ('DELETE FROM remarkRequest WHERE feedbackID=?')
+    f_id = request.form.get('regrade_info')
+    g.db.execute(sql, [f_id])
+    g.db.commit()
+    g.db.close()
+    flash('Regrade request successfully deleted')
+    return redirect(url_for('remarkrequests'))
 
 #Allows instructor to enter marks
 @app.route('/entermarks', methods=['POST','GET'])
