@@ -184,27 +184,27 @@ def tryagain():
 ##################################################################
 
 ########## STATIC HTML/CSS PAGES ##########
-@app.route('/index.html')
+@app.route('/home')
 def insidepage():
     return render_template('index.html')
 
-@app.route('/calendar.html')
+@app.route('/calendar')
 def calendar():
     return render_template('calendar.html')
 
-@app.route('/lectures.html')
+@app.route('/lectures')
 def lectures():
     return render_template('lectures.html')
 
-@app.route('/assignments.html')
+@app.route('/assignments')
 def assignments():
     return render_template('assignments.html')
 
-@app.route('/labs.html')
+@app.route('/labs')
 def labs():
     return render_template('labs.html')
 
-@app.route('/resources.html')
+@app.route('/resources')
 def resources():
     return render_template('resources.html')
 
