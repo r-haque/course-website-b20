@@ -10,7 +10,7 @@ This is a course website built for an Introduction to Databases and Web Applicat
 
 <h1>Demo</h1>
 <p>
-  The website can be accessed <a href="http://rhaque.pythonanywhere.com/" target="_blank">here</a> with the following login details.
+  The website can be accessed <a href="http://rhaque.pythonanywhere.com/" target="__blank">here</a> with the following login details.
   
   <h4>Student</h4>
   <ul>
